@@ -1,0 +1,10 @@
+Breed: Golden Retriever | Name: Buddy | Age: 3 | Photograph: https://keepcalmandadoptapet.com/buddy1.jpg
+Breed: Labrador | Name: Max | Age: 5 | Photograph: https://keepcalmandadoptapet.com/max2.jpg
+Breed: Poodle | Name: Bailey | Age: 2 | Photograph: https://keepcalmandadoptapet.com/bailey3.jpg
+Breed: German Shepherd | Name: Rocky | Age: 4 | Photograph: https://keepcalmandadoptapet.com/rocky4.jpg
+Breed: Beagle | Name: Charlie | Age: 6 | Photograph: https://keepcalmandadoptapet.com/charlie5.jpg
+Breed: Siberian Husky | Name: Luna | Age: 1 | Photograph: https://keepcalmandadoptapet.com/luna6.jpg
+Breed: Boxer | Name: Duke | Age: 7 | Photograph: https://keepcalmandadoptapet.com/duke7.jpg
+Breed: Dachshund | Name: Milo | Age: 4 | Photograph: https://keepcalmandadoptapet.com/milo8.jpg
+Breed: Border Collie | Name: Bella | Age: 8 | Photograph: https://keepcalmandadoptapet.com/bella9.jpg
+Breed: Rottweiler | Name: Roxy | Age: 2 | Photograph: https://keepcalmandadoptapet.com/roxy10.jpg
