@@ -37,13 +37,13 @@ int main(int argc, char* argv[]) {
         std::ofstream ofs;
         ofs.open("adoptedDogs.csv", std::ofstream::out | std::ofstream::trunc);
         ofs.close();
-        CSVFileAdoption* adoptionList = new CSVFileAdoption(repo, "adoptedDogs.csv");
+        adoptionList = new CSVFileAdoption(repo, "adoptedDogs.csv");
     }
     else {
         std::ofstream ofs;
         ofs.open("adoptedDogs.html", std::ofstream::out | std::ofstream::trunc);
         ofs.close();
-        HTMLFileAdoption* adoptionList = new HTMLFileAdoption(repo, "adoptedDogs.html");
+        adoptionList = new HTMLFileAdoption(repo, "adoptedDogs.html");
     }
 
     // Create main window and main menu

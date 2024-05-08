@@ -20,14 +20,10 @@ void UserMenu::buildUserMenu() {
 	setLayout(layout);
 
 	QObject::connect(this->backButton, &QPushButton::clicked, this, &UserMenu::backToMainMenu);
-
+	QObject::connect(this->seeAdoptionListButton, &QPushButton::clicked, this, &UserMenu::seeAdoptionListButtonHandler);
 }
 
-//void seeAllButtonHandler() {
-//}
-//
-//void seeFilteredButtonHandler() {
-//}
-//
-//void seeAdoptionListButtonHandler() {
-//}
+void UserMenu::seeAdoptionListButtonHandler() {
+	adopt->display();
+}
+

@@ -27,6 +27,10 @@ private:
 
 	void buildUserMenu();
 
+	//void seeAllButtonHandler();
+	//void seeFilteredButtonHandler();
+	void seeAdoptionListButtonHandler();
+
 
 signals:
 	void backToMain();
@@ -35,8 +39,4 @@ private slots:
 	void backToMainMenu() {
 		emit backToMain();
 	}
-	//void seeAllButtonHandler();
-	//void seeFilteredButtonHandler();
-	//void seeAdoptionListButtonHandler();
-
 };

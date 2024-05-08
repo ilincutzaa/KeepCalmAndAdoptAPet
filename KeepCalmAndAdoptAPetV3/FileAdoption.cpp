@@ -40,7 +40,7 @@ void HTMLFileAdoption::saveToFile() {
 }
 
 void HTMLFileAdoption::display() {
-	ShellExecuteA(NULL, "open", "file:///C:/Users/Ilinca/source/repos/KeepCalmAndAdoptAPet/KeepCalmAndAdoptAPet/adoptedDogs.html", filename.c_str(), NULL, SW_SHOWMAXIMIZED);
+	ShellExecuteA(NULL, "open", "file:///C:/Users/TUF%20Gaming/source/repos/KeepCalmAndAdoptAPetV3/KeepCalmAndAdoptAPetV3/adoptedDogs.html", filename.c_str(), NULL, SW_SHOWMAXIMIZED);
 }
 
 void FileAdoption::addAdoptionList(Dog& d) {
