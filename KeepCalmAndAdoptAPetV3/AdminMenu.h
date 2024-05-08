@@ -1,12 +1,5 @@
 #pragma once
-#include <qwidget.h>
-#include <qlistwidget.h>
-#include <qlineedit.h>
-#include <qpushbutton.h>
-#include "Controller.h"
-#include <QMainWindow>
-#include <QVBoxLayout>
-#include <QMessageBox>
+#include "EditDogDialog.h"
 
 class AdminMenu : public QWidget {
 	Q_OBJECT
@@ -22,6 +15,7 @@ private:
 	QPushButton* addButton;
 	QPushButton* deleteButton;
 	QPushButton* backButton;
+	QPushButton* updateButton;
 
 public:
     AdminMenu(Controller& controller);
@@ -30,16 +24,17 @@ private:
 	void buildAdminMenu();
 	void populateList();
 
-	void addButtonHandler();
-	void deleteButtonHandler();
-
 signals:
 	void backToMain();
 
 private slots:
+
+	void addButtonHandler();
+	void deleteButtonHandler();
+	void updateButtonHandler();
+
     void backToMainMenu() {
 		emit backToMain();
     }
-
 };
 

@@ -10,13 +10,16 @@ public:
 
 signals:
     void adminMenuRequested();
+    void userMenuRequested();
     void exitRequested();
 
 private:
-    QPushButton *adminButton;
-    QPushButton *exitButton;
+    QPushButton* adminButton;
+    QPushButton* userButton;
+    QPushButton* exitButton;
 
 private slots:
     void onAdminButtonClicked();
+    void onUserButtonClicked();
     void onExitButtonClicked();
 };

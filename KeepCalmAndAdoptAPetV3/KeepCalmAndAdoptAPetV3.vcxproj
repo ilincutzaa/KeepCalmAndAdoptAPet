@@ -92,10 +92,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EditDogDialog.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Start.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="UserMenu.cpp" />
     <ClCompile Include="Utils.cpp" />
     <QtRcc Include="KeepCalmAndAdoptAPetV3.qrc" />
     <QtUic Include="KeepCalmAndAdoptAPetV3.ui" />
@@ -120,6 +122,8 @@
     <ClInclude Include="RepoException.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="UI.h" />
+    <QtMoc Include="EditDogDialog.h" />
+    <QtMoc Include="UserMenu.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>

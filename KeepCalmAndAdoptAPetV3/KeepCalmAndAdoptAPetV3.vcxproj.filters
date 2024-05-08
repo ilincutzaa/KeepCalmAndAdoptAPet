@@ -67,6 +67,12 @@
     <ClCompile Include="MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EditDogDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdoptionList.h">
@@ -115,6 +121,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="AdminMenu.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="EditDogDialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="UserMenu.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
