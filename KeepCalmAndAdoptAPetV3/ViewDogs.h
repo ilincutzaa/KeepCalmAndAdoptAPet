@@ -5,10 +5,7 @@
 #include <vector>
 #include "Dog.h"
 #include "Controller.h"
-#include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkReply>
-#include <QPixmap>
-
+#include <QtNetwork>
 
 class ViewDogs : public QDialog {
     Q_OBJECT

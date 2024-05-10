@@ -29,6 +29,11 @@ private:
 	QPushButton* seeAdoptionListButton;
 	QPushButton* backButton;
 
+	QLabel* filterAgeLabel;
+	QLabel* filterBreedLabel;
+	QLineEdit* filterAgeEdit;
+	QLineEdit* filterBreedEdit;
+
 	void buildUserMenu();
 
 signals:
@@ -37,7 +42,7 @@ signals:
 private slots:
 
 	void seeAllButtonHandler();
-	//void seeFilteredButtonHandler();
+	void seeFilteredButtonHandler();
 	void seeAdoptionListButtonHandler();
 
 	void backToMainMenu() {

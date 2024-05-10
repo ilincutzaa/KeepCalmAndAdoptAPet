@@ -1,5 +1,4 @@
 #include "ViewDogs.h"
-#include <QPixmap>
 
 ViewDogs::ViewDogs(const std::vector<Dog>& dogs, Controller& controller, QWidget* parent)
     : QDialog(parent), dogs(dogs), currentIndex(0), controller(controller) {
@@ -17,21 +16,26 @@ ViewDogs::ViewDogs(const std::vector<Dog>& dogs, Controller& controller, QWidget
 void ViewDogs::buildViewDogs() {
     QVBoxLayout* layout = new QVBoxLayout(this);
 
-    breedLabel = new QLabel(this);
-    nameLabel = new QLabel(this);
-    ageLabel = new QLabel(this);
-    photoLabel = new QLabel(this);
+    if(dogs.size()>0)    {
+        breedLabel = new QLabel(this);
+        nameLabel = new QLabel(this);
+        ageLabel = new QLabel(this);
+        photoLabel = new QLabel(this);
 
-    layout->addWidget(breedLabel);
-    layout->addWidget(nameLabel);
-    layout->addWidget(ageLabel);
-    layout->addWidget(photoLabel);
+        layout->addWidget(breedLabel);
+        layout->addWidget(nameLabel);
+        layout->addWidget(ageLabel);
+        layout->addWidget(photoLabel);
+        QPushButton* nextButton = new QPushButton("Next", this);
+        layout->addWidget(nextButton);
+        connect(nextButton, &QPushButton::clicked, this, &ViewDogs::nextButtonClicked);
+    }
+    else {
+        QLabel* emptyLabel = new QLabel{ "Nothing to display" };
+        layout->addWidget(emptyLabel);
+    }
 
-    QPushButton* nextButton = new QPushButton("Next", this);
-    layout->addWidget(nextButton);
-    connect(nextButton, &QPushButton::clicked, this, &ViewDogs::nextButtonClicked);
-
-    QPushButton* exitButton = new QPushButton("Exit", this);
+    QPushButton* exitButton = new QPushButton("Back to User Menu", this);
     layout->addWidget(exitButton);
     connect(exitButton, &QPushButton::clicked, this, &ViewDogs::close);
 }
@@ -43,17 +47,21 @@ void ViewDogs::displayCurrentDog() {
         nameLabel->setText("Name: " + QString::fromStdString(currentDog.getName()));
         ageLabel->setText("Age: " + QString::number(currentDog.getAge()));
 
-        QNetworkAccessManager manager;
-        QUrl url("https://dogtime.com/wp-content/uploads/sites/12/2024/03/GettyImages-1285465107-e1710251441662.jpg?w=1024");
-        QNetworkReply* reply = manager.get(QNetworkRequest(QUrl(url)));
-        QObject::connect(reply, &QNetworkReply::finished, [this, reply]() {
+        QNetworkAccessManager* manager = new QNetworkAccessManager(this);
+        connect(manager, &QNetworkAccessManager::finished, this, [=](QNetworkReply* reply) {
             if (reply->error() == QNetworkReply::NoError) {
+                QByteArray imageData = reply->readAll();
                 QPixmap pixmap;
-                pixmap.loadFromData(reply->readAll());
-                photoLabel->setPixmap(pixmap.scaled(200, 200, Qt::KeepAspectRatio));
+                pixmap.loadFromData(imageData);
+                photoLabel->setPixmap(pixmap.scaled(QSize(400, 400), Qt::KeepAspectRatio));
             }
             reply->deleteLater();
             });
+
+        // Specify the URL of the image to download
+        QUrl url(QString::fromStdString(currentDog.getPhotograph()));
+        QNetworkRequest request(url);
+        manager->get(request);
     }
 }
 
