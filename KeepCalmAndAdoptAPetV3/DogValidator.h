@@ -38,10 +38,5 @@ public:
 	static bool validatePhotograph(std::string photo) {
 		if (photo.empty())
 			return 0;
-		std::vector<std::string> tokens1 = tokenize(photo, '/');
-		std::vector<std::string> tokens2 = tokenize(tokens1[3], '.');
-		std::string website = tokens1[0] + "//" + tokens1[2] + "/";
-		std::string extension = tokens2[1];
-		return website == "https://keepcalmandadoptapet.com/" && extension == "jpg";
 	}
 };

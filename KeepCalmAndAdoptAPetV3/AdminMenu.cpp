@@ -5,10 +5,17 @@ AdminMenu::AdminMenu(Controller& controller) : controller{ controller } {
 	this->buildAdminMenu();
 	this->populateList();
 
+	// Set the window title
+	setWindowTitle("Admin Menu");
+
+	// Set the window icon
+	setWindowIcon(QIcon("icon.png"));
+
+
 	QObject::connect(this->addButton, &QPushButton::clicked, this, &AdminMenu::addButtonHandler);
 	QObject::connect(this->deleteButton, &QPushButton::clicked, this, &AdminMenu::deleteButtonHandler);
 	QObject::connect(this->backButton, &QPushButton::clicked, this, &AdminMenu::backToMainMenu);
-	QObject::connect(this->updateButton, &QPushButton::clicked, this, &AdminMenu::updateButtonHandler);
+	QObject::connect(this->editButton, &QPushButton::clicked, this, &AdminMenu::editButtonHandler);
 
 }
 
@@ -28,8 +35,6 @@ void AdminMenu::buildAdminMenu() {
 	QLabel* photoLabel = new QLabel{ "Photograph" };
 	this->photoEdit = new QLineEdit{};
 
-	this->photoEdit->setText("https://keepcalmandadoptapet.com/photo.jpg");
-
 
 	rightLayout->addWidget(breedLabel, 0, 0);
 	rightLayout->addWidget(this->breedEdit, 0, 1);
@@ -43,14 +48,15 @@ void AdminMenu::buildAdminMenu() {
 	this->addButton = new QPushButton{ "Add" };
 	this->backButton = new QPushButton{ "Back to Main Menu" };
 	this->deleteButton = new QPushButton{ "Delete" };
-	this->updateButton = new QPushButton{ "Update Menu" };
+	this->editButton = new QPushButton{ "Edit Menu" };
 
 	rightLayout->addWidget(this->addButton, 4, 1);
 	rightLayout->addWidget(this->deleteButton, 5, 1);
 	rightLayout->addWidget(this->backButton, 5, 3);
-	rightLayout->addWidget(this->updateButton, 4, 3);
+	rightLayout->addWidget(this->editButton, 4, 3);
 
 	mainLayout->addLayout(rightLayout);
+
 }
 
 void AdminMenu::populateList() {
@@ -102,7 +108,7 @@ void AdminMenu::deleteButtonHandler() {
 	}
 }
 
-void AdminMenu::updateButtonHandler() {
+void AdminMenu::editButtonHandler() {
 	int selectedIndex = this->dogListWidget->currentRow();
 
 	if (selectedIndex >= 0) {

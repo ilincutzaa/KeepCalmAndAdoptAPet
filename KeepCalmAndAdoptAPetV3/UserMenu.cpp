@@ -2,6 +2,12 @@
 
 UserMenu::UserMenu(AdoptionList* adopt): adopt(adopt) {
 	this->buildUserMenu();
+	// Set the window title
+	setWindowTitle("User Menu");
+
+	// Set the window icon
+	setWindowIcon(QIcon("icon.png"));
+
 }
 
 void UserMenu::buildUserMenu() {

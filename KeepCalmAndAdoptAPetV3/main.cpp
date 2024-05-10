@@ -13,6 +13,8 @@
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
 
+    QIcon appIcon("icon.png");
+
     // Initialize repository and controller
     std::vector<Dog> v;
     FileRepository repo{ v , "Dogs.txt" };
@@ -23,15 +25,22 @@ int main(int argc, char* argv[]) {
     // Create userMenu
     UserMenu* userMenu = nullptr;
 
+    QInputDialog inputDialog;
+
+    // Set icon for the input dialog window
+    inputDialog.setWindowIcon(appIcon);
+
     // Ask the user to select the file type
     QStringList items;
     items << "CSV" << "HTML";
     bool ok;
-    QString selectedItem = QInputDialog::getItem(nullptr, "Select File Type",
+    QString selectedItem = inputDialog.getItem(nullptr, "Select File Type",
         "Choose the file type to save the adoption list:",
         items, 0, false, &ok);
+
     if (!ok) // User canceled
         return 0;
+
 
     if (selectedItem == "CSV") {
         std::ofstream ofs;
@@ -49,6 +58,8 @@ int main(int argc, char* argv[]) {
     // Create main window and main menu
     QMainWindow mainWindow;
     MainMenu mainMenu;
+
+    mainWindow.setWindowIcon(appIcon);
 
     // Create admin menu
     AdminMenu* adminMenu = nullptr;

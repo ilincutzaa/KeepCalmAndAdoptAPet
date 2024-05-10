@@ -1,10 +1,10 @@
-Breed: Golden Retriever | Name: Buddy | Age: 3 | Photograph: https://keepcalmandadoptapet.com/buddy1.jpg
-Breed: Labrador | Name: Max | Age: 5 | Photograph: https://keepcalmandadoptapet.com/max2.jpg
-Breed: Poodle | Name: Bailey | Age: 2 | Photograph: https://keepcalmandadoptapet.com/bailey3.jpg
-Breed: German Shepherd | Name: Rocky | Age: 4 | Photograph: https://keepcalmandadoptapet.com/rocky4.jpg
-Breed: Beagle | Name: Charlie | Age: 6 | Photograph: https://keepcalmandadoptapet.com/charlie5.jpg
-Breed: Siberian Husky | Name: Luna | Age: 1 | Photograph: https://keepcalmandadoptapet.com/luna6.jpg
-Breed: Boxer | Name: Duke | Age: 7 | Photograph: https://keepcalmandadoptapet.com/duke7.jpg
-Breed: Dachshund | Name: Milo | Age: 4 | Photograph: https://keepcalmandadoptapet.com/milo8.jpg
-Breed: Border Collie | Name: Bella | Age: 8 | Photograph: https://keepcalmandadoptapet.com/bella9.jpg
-Breed: Rottweiler | Name: Roxy | Age: 2 | Photograph: https://keepcalmandadoptapet.com/roxy10.jpg
+Breed: Golden Retriever | Name: Buddy | Age: 3 | Photograph: https://dogtime.com/wp-content/uploads/sites/12/2024/03/GettyImages-1285465107-e1710251441662.jpg?w=1024
+Breed: Labrador Retriever | Name: Max | Age: 5 | Photograph: https://dogtime.com/wp-content/uploads/sites/12/2024/01/GettyImages-590608307-e1706029609404.jpg?w=1024
+Breed: Poodle | Name: Bailey | Age: 2 | Photograph: https://dogtime.com/wp-content/uploads/sites/12/2011/01/GettyImages-182816790-e1698160624173.jpg
+Breed: German Shepherd | Name: Rocky | Age: 4 | Photograph: https://dogtime.com/wp-content/uploads/sites/12/2023/11/GettyImages-529202089-e1701095552546.jpg?w=1024
+Breed: Beagle | Name: Charlie | Age: 6 | Photograph: https://dogtime.com/wp-content/uploads/sites/12/2023/11/GettyImages-157603001-e1701106766955.jpg?w=1024
+Breed: Siberian Husky | Name: Luna | Age: 1 | Photograph: https://dogtime.com/wp-content/uploads/sites/12/2023/11/GettyImages-1454565264-e1701120522406.jpg?w=1024
+Breed: Boxer | Name: Duke | Age: 7 | Photograph: https://dogtime.com/wp-content/uploads/sites/12/2023/08/GettyImages-463043655-1-e1692889076481.jpg?w=1024
+Breed: Dachshund | Name: Milo | Age: 4 | Photograph: https://dogtime.com/wp-content/uploads/sites/12/2011/01/GettyImages-700141990-e1688418771301.jpg
+Breed: Border Collie | Name: Bella | Age: 8 | Photograph: https://dogtime.com/wp-content/uploads/sites/12/2023/09/GettyImages-164855910-1-e1694532950609.jpg?w=1024
+Breed: Rottweiler | Name: Roxy | Age: 2 | Photograph: https://dogtime.com/wp-content/uploads/sites/12/2023/11/GettyImages-1198147566-e1701133343267.jpg?w=1024

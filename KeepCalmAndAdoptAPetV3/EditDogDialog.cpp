@@ -3,6 +3,12 @@
 
 EditDogDialog::EditDogDialog(Dog& dog, Controller& controller) : dog(dog), controller(controller) {
     this->buildEditDogDialogue();
+    // Set the window title
+    setWindowTitle("Edit Menu");
+
+    // Set the window icon
+    setWindowIcon(QIcon("icon.png"));
+
 }
 
 void EditDogDialog::buildEditDogDialogue() {

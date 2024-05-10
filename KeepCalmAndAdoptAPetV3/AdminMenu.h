@@ -15,7 +15,7 @@ private:
 	QPushButton* addButton;
 	QPushButton* deleteButton;
 	QPushButton* backButton;
-	QPushButton* updateButton;
+	QPushButton* editButton;
 
 public:
     AdminMenu(Controller& controller);
@@ -31,7 +31,7 @@ private slots:
 
 	void addButtonHandler();
 	void deleteButtonHandler();
-	void updateButtonHandler();
+	void editButtonHandler();
 
     void backToMainMenu() {
 		emit backToMain();
