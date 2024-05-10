@@ -99,6 +99,7 @@
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UserMenu.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="ViewDogs.cpp" />
     <QtRcc Include="KeepCalmAndAdoptAPetV3.qrc" />
     <QtUic Include="KeepCalmAndAdoptAPetV3.ui" />
     <QtMoc Include="AdminMenu.h" />
@@ -118,6 +119,7 @@
     <ClInclude Include="DogValidator.h" />
     <ClInclude Include="FileAdoption.h" />
     <ClInclude Include="FileRepository.h" />
+    <QtMoc Include="ViewDogs.h" />
     <QtMoc Include="MainMenu.h" />
     <ClInclude Include="RepoException.h" />
     <ClInclude Include="Repository.h" />

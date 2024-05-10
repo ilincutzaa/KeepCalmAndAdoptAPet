@@ -1,6 +1,6 @@
 #include "UserMenu.h"
 
-UserMenu::UserMenu(AdoptionList* adopt): adopt(adopt) {
+UserMenu::UserMenu(AdoptionList* adopt, Controller& controller): adopt(adopt), controller(controller) {
 	this->buildUserMenu();
 	// Set the window title
 	setWindowTitle("User Menu");
@@ -27,6 +27,12 @@ void UserMenu::buildUserMenu() {
 
 	QObject::connect(this->backButton, &QPushButton::clicked, this, &UserMenu::backToMainMenu);
 	QObject::connect(this->seeAdoptionListButton, &QPushButton::clicked, this, &UserMenu::seeAdoptionListButtonHandler);
+	QObject::connect(this->seeAllButton, &QPushButton::clicked, this, &UserMenu::seeAllButtonHandler);
+}
+
+void UserMenu::seeAllButtonHandler() {
+	ViewDogs viewDogs(this->controller.getList(), this->controller);
+	viewDogs.exec();
 }
 
 void UserMenu::seeAdoptionListButtonHandler() {

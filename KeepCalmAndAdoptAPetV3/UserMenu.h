@@ -4,21 +4,25 @@
 #include <qlineedit.h>
 #include <qpushbutton.h>
 #include "AdoptionList.h"
+#include "Controller.h"
 #include <QMainWindow>
 #include <QVBoxLayout>
 #include <QMessageBox>
 #include <QDialog>
 #include <qlayout.h>
 #include <qlabel.h>
+#include "ViewDogs.h"
+
 
 class UserMenu : public QWidget {
 	Q_OBJECT
 
 public:
-	UserMenu(AdoptionList* adopt);
+	UserMenu(AdoptionList* adopt, Controller& control);
 
 private:
 	AdoptionList* adopt;
+	Controller& controller;
 
 	QPushButton* seeAllButton;
 	QPushButton* seeFilteredButton;
@@ -27,15 +31,15 @@ private:
 
 	void buildUserMenu();
 
-	//void seeAllButtonHandler();
-	//void seeFilteredButtonHandler();
-	void seeAdoptionListButtonHandler();
-
-
 signals:
 	void backToMain();
 
 private slots:
+
+	void seeAllButtonHandler();
+	//void seeFilteredButtonHandler();
+	void seeAdoptionListButtonHandler();
+
 	void backToMainMenu() {
 		emit backToMain();
 	}

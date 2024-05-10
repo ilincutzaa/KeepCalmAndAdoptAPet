@@ -87,7 +87,7 @@ int main(int argc, char* argv[]) {
     // Connect signals from main menu to slots
     QObject::connect(&mainMenu, &MainMenu::userMenuRequested, [&mainWindow, &control, &mainMenu, &userMenu, &adoptionList]() {
         if (userMenu == nullptr) {
-            userMenu = new UserMenu(adoptionList);
+            userMenu = new UserMenu(adoptionList, control);
             // Connect backToMain signal to lambda slot
             QObject::connect(userMenu, &UserMenu::backToMain, [&mainWindow, &mainMenu, &userMenu]() {
                 userMenu->hide(); // Hide admin menu
