@@ -1,11 +1,8 @@
 #include "ViewDogs.h"
 
-ViewDogs::ViewDogs(const std::vector<Dog>& dogs, Controller& controller, QWidget* parent)
-    : QDialog(parent), dogs(dogs), currentIndex(0), controller(controller) {
-    // Set the window title
+ViewDogs::ViewDogs(const std::vector<Dog>& dogs, AdoptionList* adopt, QWidget* parent)
+    : QDialog(parent), dogs(dogs), currentIndex(0), adopt(adopt) {
     setWindowTitle("Dogs");
-
-    // Set the window icon
     setWindowIcon(QIcon("icon.png"));
     
     buildViewDogs();
@@ -16,7 +13,7 @@ ViewDogs::ViewDogs(const std::vector<Dog>& dogs, Controller& controller, QWidget
 void ViewDogs::buildViewDogs() {
     QVBoxLayout* layout = new QVBoxLayout(this);
 
-    if(dogs.size()>0)    {
+    if(dogs.size() > 0) {
         breedLabel = new QLabel(this);
         nameLabel = new QLabel(this);
         ageLabel = new QLabel(this);
@@ -26,7 +23,12 @@ void ViewDogs::buildViewDogs() {
         layout->addWidget(nameLabel);
         layout->addWidget(ageLabel);
         layout->addWidget(photoLabel);
-        QPushButton* nextButton = new QPushButton("Next", this);
+
+        adoptButton = new QPushButton("Adopt", this);
+        layout->addWidget(adoptButton);
+        connect(adoptButton, &QPushButton::clicked, this, &ViewDogs::adoptButtonClicked);
+
+        nextButton = new QPushButton("Next", this);
         layout->addWidget(nextButton);
         connect(nextButton, &QPushButton::clicked, this, &ViewDogs::nextButtonClicked);
     }
@@ -35,7 +37,7 @@ void ViewDogs::buildViewDogs() {
         layout->addWidget(emptyLabel);
     }
 
-    QPushButton* exitButton = new QPushButton("Back to User Menu", this);
+    exitButton = new QPushButton("Back to User Menu", this);
     layout->addWidget(exitButton);
     connect(exitButton, &QPushButton::clicked, this, &ViewDogs::close);
 }
@@ -46,6 +48,32 @@ void ViewDogs::displayCurrentDog() {
         breedLabel->setText("Breed: " + QString::fromStdString(currentDog.getBreed()));
         nameLabel->setText("Name: " + QString::fromStdString(currentDog.getName()));
         ageLabel->setText("Age: " + QString::number(currentDog.getAge()));
+
+        // Check if the current dog is adopted
+        if (this->adopt->isDogAdopted(currentDog)) {
+            // If adopted, hide the adopt button and display "ADOPTED" label
+            if (adoptButton) {
+                adoptButton->hide();
+            }
+            // Remove any previously added "ADOPTED" label
+            if (adoptedLabel) {
+                adoptedLabel->deleteLater();
+                adoptedLabel = nullptr;
+            }
+            adoptedLabel = new QLabel("ADOPTED", this);
+            layout()->addWidget(adoptedLabel);
+        }
+        else {
+            // If not adopted, show the adopt button and remove any "ADOPTED" label
+            if (adoptButton) {
+                adoptButton->show();
+            }
+            // Remove any previously added "ADOPTED" label
+            if (adoptedLabel) {
+                adoptedLabel->deleteLater();
+                adoptedLabel = nullptr;
+            }
+        }
 
         QNetworkAccessManager* manager = new QNetworkAccessManager(this);
         connect(manager, &QNetworkAccessManager::finished, this, [=](QNetworkReply* reply) {
@@ -58,11 +86,16 @@ void ViewDogs::displayCurrentDog() {
             reply->deleteLater();
             });
 
-        // Specify the URL of the image to download
         QUrl url(QString::fromStdString(currentDog.getPhotograph()));
         QNetworkRequest request(url);
         manager->get(request);
     }
+}
+
+void ViewDogs::adoptButtonClicked() {
+    Dog currentDog = dogs[currentIndex];
+    this->adopt->addAdoptionList(currentDog);
+    this->nextButtonClicked();
 }
 
 void ViewDogs::nextButtonClicked() {

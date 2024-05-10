@@ -22,16 +22,16 @@ int Repository::getSizeRepo() {
 }
 
 void Repository::generateDogs() {
-	Dog dog1("Golden Retriever", "Buddy", 3, "https://keepcalmandadoptapet.com/buddy1.jpg");
-	Dog dog2("Labrador", "Max", 5, "https://keepcalmandadoptapet.com/max2.jpg");
-	Dog dog3("Poodle", "Bailey", 2, "https://keepcalmandadoptapet.com/bailey3.jpg");
-	Dog dog4("German Shepherd", "Rocky", 4, "https://keepcalmandadoptapet.com/rocky4.jpg");
-	Dog dog5("Beagle", "Charlie", 6, "https://keepcalmandadoptapet.com/charlie5.jpg");
-	Dog dog6("Siberian Husky", "Luna", 1, "https://keepcalmandadoptapet.com/luna6.jpg");
-	Dog dog7("Boxer", "Duke", 7, "https://keepcalmandadoptapet.com/duke7.jpg");
-	Dog dog8("Dachshund", "Milo", 4, "https://keepcalmandadoptapet.com/milo8.jpg");
-	Dog dog9("Border Collie", "Bella", 8, "https://keepcalmandadoptapet.com/bella9.jpg");
-	Dog dog10("Rottweiler", "Roxy", 2, "https://keepcalmandadoptapet.com/roxy10.jpg");
+	Dog dog1("Golden Retriever", "Buddy", 3, "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Golden_retriever.jpg/547px-Golden_retriever.jpg");
+	Dog dog2("Labrador Retriever", "Max", 5, "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Chocolate_Labrador_Retriever.jpg/800px-Chocolate_Labrador_Retriever.jpg");
+	Dog dog3("Poodle", "Bailey", 2, "https://static.wikia.nocookie.net/animals-are-cool/images/6/68/Standard-white-poodle.jpg/revision/latest?cb=20180825084022");
+	Dog dog4("German Shepherd", "Rocky", 0, "https://miro.medium.com/v2/resize:fit:800/0*LFS-oAro8b1qmeH9.jpg");
+	Dog dog5("Beagle", "Charlie", 6, "https://www.dogster.com/wp-content/uploads/2012/05/beagle-dog-standing-outdoor_Artyom-Gantsev_Shutterstock.jpg");
+	Dog dog6("Siberian Husky", "Luna", 1, "https://www.animaland.ro/wp-content/uploads/2022/04/Siberian-Husky-1200x800.jpg");
+	Dog dog7("Boxer", "Duke", 7, "https://media-be.chewy.com/wp-content/uploads/2021/04/16140537/Boxer_Feature-Image.jpg");
+	Dog dog8("Dachshund", "Milo", 4, "https://www.thesprucepets.com/thmb/8UgAnzf_7o7i7qPPr528XtM0IW8=/2121x0/filters:no_upscale():strip_icc()/GettyImages-839279536-313d30c290584bc0a207bc6243263bd4.jpg");
+	Dog dog9("Border Collie", "Bella", 8, "https://www.dogster.com/wp-content/uploads/2024/03/blue-merle-border-collie-dog-posing-in-an-urban-setting_Koen-Adriaenssen_Shutterstock.jpg");
+	Dog dog10("Rottweiler", "Roxy", 0, "https://ntbrand-wp.s3.amazonaws.com/mystart/wp-content/uploads/2020/03/12150859/My_Rotweiller_00.jpeg");
 	addRepo(dog1);
 	addRepo(dog2);
 	addRepo(dog3);

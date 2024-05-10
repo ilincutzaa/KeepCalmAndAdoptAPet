@@ -49,7 +49,7 @@ void UserMenu::buildUserMenu() {
 }
 
 void UserMenu::seeAllButtonHandler() {
-	ViewDogs viewDogs(this->controller.getList(), this->controller);
+	ViewDogs viewDogs(this->controller.getList(), this->adopt);
 	viewDogs.exec();
 }
 
@@ -59,7 +59,7 @@ void UserMenu::seeFilteredButtonHandler() {
 	std::vector<Dog> allDogs = this->controller.getList();
 	std::vector<Dog> breedfiltered = this->adopt->filterBreed(allDogs, breedText.toStdString());
 	std::vector<Dog> filtered = this->adopt->filterAge(breedfiltered, ageText.toInt());
-	ViewDogs viewDogs(filtered, this->controller);
+	ViewDogs viewDogs(filtered, this->adopt);
 	viewDogs.exec();
 }
 

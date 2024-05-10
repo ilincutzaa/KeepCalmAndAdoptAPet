@@ -104,7 +104,6 @@
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Start.cpp" />
-    <ClCompile Include="UI.cpp" />
     <ClCompile Include="UserMenu.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="ViewDogs.cpp" />
@@ -131,7 +130,6 @@
     <QtMoc Include="MainMenu.h" />
     <ClInclude Include="RepoException.h" />
     <ClInclude Include="Repository.h" />
-    <ClInclude Include="UI.h" />
     <QtMoc Include="EditDogDialog.h" />
     <QtMoc Include="UserMenu.h" />
     <ClInclude Include="Utils.h" />

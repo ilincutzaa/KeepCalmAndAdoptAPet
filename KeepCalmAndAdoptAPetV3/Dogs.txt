@@ -1,5 +1,5 @@
 Breed: Golden Retriever | Name: Buddy | Age: 3 | Photograph: https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Golden_retriever.jpg/547px-Golden_retriever.jpg
-Breed: Labrador Retriever | Name: Max | Age: 1 | Photograph: https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Chocolate_Labrador_Retriever.jpg/800px-Chocolate_Labrador_Retriever.jpg
+Breed: Labrador Retriever | Name: Max | Age: 5 | Photograph: https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Chocolate_Labrador_Retriever.jpg/800px-Chocolate_Labrador_Retriever.jpg
 Breed: Poodle | Name: Bailey | Age: 2 | Photograph: https://static.wikia.nocookie.net/animals-are-cool/images/6/68/Standard-white-poodle.jpg/revision/latest?cb=20180825084022
 Breed: German Shepherd | Name: Rocky | Age: 0 | Photograph: https://miro.medium.com/v2/resize:fit:800/0*LFS-oAro8b1qmeH9.jpg
 Breed: Beagle | Name: Charlie | Age: 6 | Photograph: https://www.dogster.com/wp-content/uploads/2012/05/beagle-dog-standing-outdoor_Artyom-Gantsev_Shutterstock.jpg

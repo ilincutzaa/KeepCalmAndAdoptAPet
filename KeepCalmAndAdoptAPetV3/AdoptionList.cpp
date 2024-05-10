@@ -30,5 +30,4 @@ std::vector<Dog> AdoptionList::filterAge(std::vector<Dog>& dog_list, int age) {
 
 void AdoptionList::addAdoptionList(Dog& d) {
 	this->adoptionList.push_back(d);
-	this->repo.delRepo(d);
 }
