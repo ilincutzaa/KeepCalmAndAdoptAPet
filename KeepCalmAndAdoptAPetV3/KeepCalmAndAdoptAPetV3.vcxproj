@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.7.0_msvc2019_64</QtInstall>
-    <QtModules>core;gui;network;widgets</QtModules>
+    <QtModules>core;gui;network;widgets;printsupport;charts;datavisualization</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -100,8 +100,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DogChart.cpp" />
     <ClCompile Include="EditDogDialog.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="qcustomplot.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Start.cpp" />
     <ClCompile Include="UserMenu.cpp" />
@@ -123,11 +125,13 @@
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Dog.h" />
     <ClInclude Include="DogException.h" />
+    <ClInclude Include="DogChart.h" />
     <ClInclude Include="DogValidator.h" />
     <ClInclude Include="FileAdoption.h" />
     <ClInclude Include="FileRepository.h" />
     <QtMoc Include="ViewDogs.h" />
     <QtMoc Include="MainMenu.h" />
+    <QtMoc Include="qcustomplot.h" />
     <ClInclude Include="RepoException.h" />
     <ClInclude Include="Repository.h" />
     <QtMoc Include="EditDogDialog.h" />

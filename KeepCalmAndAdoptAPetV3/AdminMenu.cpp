@@ -5,18 +5,14 @@ AdminMenu::AdminMenu(Controller& controller) : controller{ controller } {
 	this->buildAdminMenu();
 	this->populateList();
 
-	// Set the window title
 	setWindowTitle("Admin Menu");
-
-	// Set the window icon
 	setWindowIcon(QIcon("icon.png"));
-
 
 	QObject::connect(this->addButton, &QPushButton::clicked, this, &AdminMenu::addButtonHandler);
 	QObject::connect(this->deleteButton, &QPushButton::clicked, this, &AdminMenu::deleteButtonHandler);
 	QObject::connect(this->backButton, &QPushButton::clicked, this, &AdminMenu::backToMainMenu);
 	QObject::connect(this->editButton, &QPushButton::clicked, this, &AdminMenu::editButtonHandler);
-
+	QObject::connect(this->chartButton, &QPushButton::clicked, this, &AdminMenu::chartButtonHandler);
 }
 
 void AdminMenu::buildAdminMenu() {
@@ -49,11 +45,13 @@ void AdminMenu::buildAdminMenu() {
 	this->backButton = new QPushButton{ "Back to Main Menu" };
 	this->deleteButton = new QPushButton{ "Delete" };
 	this->editButton = new QPushButton{ "Edit Menu" };
+	this->chartButton = new QPushButton{ "View Chart" };
 
 	rightLayout->addWidget(this->addButton, 4, 1);
 	rightLayout->addWidget(this->deleteButton, 5, 1);
 	rightLayout->addWidget(this->backButton, 5, 3);
 	rightLayout->addWidget(this->editButton, 4, 3);
+	rightLayout->addWidget(this->chartButton, 4, 2);
 
 	mainLayout->addLayout(rightLayout);
 
@@ -131,4 +129,9 @@ void AdminMenu::editButtonHandler() {
 	else {
 		QMessageBox::critical(this, "Error:", "No item selected.");
 	}
+}
+
+void AdminMenu::chartButtonHandler() {
+	DogChart* chart = new DogChart{ this->controller.getList() };
+	chart->show();
 }

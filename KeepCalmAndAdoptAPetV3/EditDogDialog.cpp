@@ -3,10 +3,8 @@
 
 EditDogDialog::EditDogDialog(Dog& dog, Controller& controller) : dog(dog), controller(controller) {
     this->buildEditDogDialogue();
-    // Set the window title
     setWindowTitle("Edit Menu");
 
-    // Set the window icon
     setWindowIcon(QIcon("icon.png"));
 
 }
@@ -14,27 +12,23 @@ EditDogDialog::EditDogDialog(Dog& dog, Controller& controller) : dog(dog), contr
 void EditDogDialog::buildEditDogDialogue() {
     QVBoxLayout* layout = new QVBoxLayout(this);
 
-    // Create QLineEdit widgets for breed, name, age, and photo
     breedEdit = new QLineEdit(QString::fromStdString(dog.getBreed()));
     nameEdit = new QLineEdit(QString::fromStdString(dog.getName()));
     ageEdit = new QLineEdit(QString::number(dog.getAge()));
     photoEdit = new QLineEdit(QString::fromStdString(dog.getPhotograph()));
 
-    // Create buttons for updating each attribute
     updateBreedButton = new QPushButton("Update Breed");
     updateNameButton = new QPushButton("Update Name");
     updateAgeButton = new QPushButton("Update Age");
     updatePhotoButton = new QPushButton("Update Photo");
     backButton = new QPushButton("Back to Admin Menu");
 
-    // Connect each button to its corresponding slot
     connect(updateBreedButton, &QPushButton::clicked, this, &EditDogDialog::updateBreed);
     connect(updateNameButton, &QPushButton::clicked, this, &EditDogDialog::updateName);
     connect(updateAgeButton, &QPushButton::clicked, this, &EditDogDialog::updateAge);
     connect(updatePhotoButton, &QPushButton::clicked, this, &EditDogDialog::updatePhoto);
     connect(backButton, &QPushButton::clicked, this, &EditDogDialog::goToAdminMenu);
 
-    // Add widgets to the layout
     layout->addWidget(new QLabel("Breed:"));
     layout->addWidget(breedEdit);
     layout->addWidget(updateBreedButton);
@@ -50,7 +44,6 @@ void EditDogDialog::buildEditDogDialogue() {
     layout->addWidget(updatePhotoButton);
     layout->addWidget(backButton);
 
-    // Set the layout for the dialog
     setLayout(layout);
 }
 

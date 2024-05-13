@@ -21,7 +21,7 @@ private slots:
     void updateName();
     void updateAge();
     void updatePhoto();
-    void goToAdminMenu(); // New slot for going back to admin menu
+    void goToAdminMenu();
 
 private:
     Controller& controller;
@@ -34,7 +34,7 @@ private:
     QPushButton* updateNameButton;
     QPushButton* updateAgeButton;
     QPushButton* updatePhotoButton;
-    QPushButton* backButton; // New button for going back to admin menu
+    QPushButton* backButton;
     Dog& dog;
 
 private:

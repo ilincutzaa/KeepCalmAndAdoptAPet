@@ -49,13 +49,10 @@ void ViewDogs::displayCurrentDog() {
         nameLabel->setText("Name: " + QString::fromStdString(currentDog.getName()));
         ageLabel->setText("Age: " + QString::number(currentDog.getAge()));
 
-        // Check if the current dog is adopted
         if (this->adopt->isDogAdopted(currentDog)) {
-            // If adopted, hide the adopt button and display "ADOPTED" label
             if (adoptButton) {
                 adoptButton->hide();
             }
-            // Remove any previously added "ADOPTED" label
             if (adoptedLabel) {
                 adoptedLabel->deleteLater();
                 adoptedLabel = nullptr;
@@ -64,11 +61,9 @@ void ViewDogs::displayCurrentDog() {
             layout()->addWidget(adoptedLabel);
         }
         else {
-            // If not adopted, show the adopt button and remove any "ADOPTED" label
             if (adoptButton) {
                 adoptButton->show();
             }
-            // Remove any previously added "ADOPTED" label
             if (adoptedLabel) {
                 adoptedLabel->deleteLater();
                 adoptedLabel = nullptr;

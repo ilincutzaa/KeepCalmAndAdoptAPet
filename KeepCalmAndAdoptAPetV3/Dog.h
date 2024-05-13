@@ -14,7 +14,8 @@ private:
 	int age;
 	std::string photograph;
 public:
-	/// <summary>
+	
+	// <summary>
 	/// Initializes a new instance of the <see cref="Dog"/> class.
 	/// </summary>
 	/// <param name="breed">The breed.</param>

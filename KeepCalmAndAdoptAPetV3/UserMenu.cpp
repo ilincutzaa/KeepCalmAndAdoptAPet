@@ -2,10 +2,8 @@
 
 UserMenu::UserMenu(AdoptionList* adopt, Controller& controller): adopt(adopt), controller(controller) {
 	this->buildUserMenu();
-	// Set the window title
 	setWindowTitle("User Menu");
 
-	// Set the window icon
 	setWindowIcon(QIcon("icon.png"));
 
 }
