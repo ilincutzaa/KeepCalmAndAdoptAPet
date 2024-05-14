@@ -10,4 +10,4 @@ Breed: Border Collie | Name: Bella | Age: 8 | Photograph: https://www.dogster.co
 Breed: Rottweiler | Name: Roxy | Age: 0 | Photograph: https://ntbrand-wp.s3.amazonaws.com/mystart/wp-content/uploads/2020/03/12150859/My_Rotweiller_00.jpeg
 Breed: Dachshund | Name: Mickey | Age: 2 | Photograph: https://www.akc.org/wp-content/uploads/2017/11/Longhaired-Dachshund-standing-outdoors.jpg
 Breed: Siberian Husky | Name: Rex | Age: 5 | Photograph: https://www.ellevetsciences.com/wp-content/uploads/2022/07/ev-blog-huskies-header.jpg
-Breed: Dachshund | Name: Ricky | Age: 0 | Photograph: https://thenoblepaw.com/wp-content/uploads/2022/03/Dachshund.jpg
+Breed: Dachshund | Name: Ricky | Age: 1 | Photograph: https://thenoblepaw.com/wp-content/uploads/2022/03/Dachshund.jpg
