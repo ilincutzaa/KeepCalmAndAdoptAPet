@@ -5,7 +5,6 @@ UserMenu::UserMenu(AdoptionList* adopt, Controller& controller): adopt(adopt), c
 	setWindowTitle("User Menu");
 
 	setWindowIcon(QIcon("icon.png"));
-
 }
 
 void UserMenu::buildUserMenu() {
@@ -62,6 +61,7 @@ void UserMenu::seeFilteredButtonHandler() {
 }
 
 void UserMenu::seeAdoptionListButtonHandler() {
-	adopt->display();
+	AdoptionListView* view = new AdoptionListView(*adopt, this);
+	view->exec();
 }
 

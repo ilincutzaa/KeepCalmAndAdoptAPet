@@ -15,7 +15,9 @@ void Controller::addDog(Dog& d) {
 }
 
 void Controller::delDog(Dog& d) {
+	std::string photo = d.getPhotograph();
 	this->repo.delRepo(d);
+	emit dogDeleted(photo);
 }
 
 void Controller::updateDogName(Dog& d, std::string new_name) {
@@ -39,6 +41,10 @@ Dog Controller::getDogByID(int id) {
 	if (id >= dog_list.size())
 		throw std::runtime_error("Invalid ID");
 	return dog_list[id];
+}
+
+bool Controller::isDogInList(Dog d) {
+	return repo.isDogInList(d);
 }
 
 

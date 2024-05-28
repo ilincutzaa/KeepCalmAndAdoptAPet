@@ -55,9 +55,6 @@
     <ClCompile Include="Repository.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Start.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -81,12 +78,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AdoptionList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Controller.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Dog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -139,6 +130,18 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="qcustomplot.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="AdoptionListView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="AdoptionList.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="AdoptionListModel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Controller.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

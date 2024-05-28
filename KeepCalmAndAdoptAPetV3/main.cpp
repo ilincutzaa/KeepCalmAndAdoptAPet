@@ -58,9 +58,9 @@ int main(int argc, char* argv[]) {
 
     AdminMenu* adminMenu = nullptr;
 
-    QObject::connect(&mainMenu, &MainMenu::adminMenuRequested, [&mainWindow, &control, &mainMenu, &adminMenu]() {
+    QObject::connect(&mainMenu, &MainMenu::adminMenuRequested, [&mainWindow, &control, &mainMenu, &adminMenu, &adoptionList]() {
         if (adminMenu == nullptr) {
-            adminMenu = new AdminMenu(control);
+            adminMenu = new AdminMenu(control, adoptionList);
             QObject::connect(adminMenu, &AdminMenu::backToMain, [&mainWindow, &mainMenu, &adminMenu]() {
                 adminMenu->hide();
                 delete adminMenu;

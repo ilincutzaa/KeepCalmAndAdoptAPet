@@ -1,11 +1,13 @@
 #pragma once
 #include "EditDogDialog.h"
 #include "DogChart.h"
+#include "AdoptionList.h"
 
 class AdminMenu : public QWidget {
 	Q_OBJECT
 private:
 	Controller& controller;
+	AdoptionList* adopt;
 
 	QListWidget* dogListWidget;
 	QLineEdit* breedEdit;
@@ -20,11 +22,12 @@ private:
 	QPushButton* chartButton;
 
 public:
-    AdminMenu(Controller& controller);
+    AdminMenu(Controller& controller, AdoptionList* adopt);
 
 private:
 	void buildAdminMenu();
 	void populateList();
+
 
 signals:
 	void backToMain();

@@ -28,6 +28,18 @@ std::vector<Dog> AdoptionList::filterAge(std::vector<Dog>& dog_list, int age) {
 	return filtered;
 }
 
+void AdoptionList::delDog(std::string photo) {
+	auto it = std::find_if(adoptionList.begin(), adoptionList.end(), [&photo](const Dog& dog) {
+		return dog.getPhotograph() == photo;
+		});
+
+	if (it != adoptionList.end()) {
+		adoptionList.erase(it);
+		emit adoptionListUpdated();
+	}
+}
+
 void AdoptionList::addAdoptionList(Dog& d) {
 	this->adoptionList.push_back(d);
+	emit adoptionListUpdated();
 }

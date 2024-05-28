@@ -1,7 +1,9 @@
 #pragma once
+#include <qobject>
 #include "Repository.h"
 
-class Controller {
+class Controller: QObject {
+	Q_OBJECT
 private:
 	Repository& repo;
 public:	
@@ -59,4 +61,8 @@ public:
 	/// <param name="id">The identifier.</param>
 	/// <returns></returns>
 	Dog getDogByID(int id);	
+	bool isDogInList(Dog d);
+signals:
+	void adoptionListUpdated();
+	void dogDeleted(std::string photograph);
 };

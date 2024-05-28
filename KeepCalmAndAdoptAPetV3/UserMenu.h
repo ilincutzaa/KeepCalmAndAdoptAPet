@@ -3,7 +3,7 @@
 #include <qlistwidget.h>
 #include <qlineedit.h>
 #include <qpushbutton.h>
-#include "AdoptionList.h"
+#include "AdoptionListView.h"
 #include "Controller.h"
 #include <QMainWindow>
 #include <QVBoxLayout>

@@ -1,12 +1,14 @@
 #include "AdminMenu.h"
 
 
-AdminMenu::AdminMenu(Controller& controller) : controller{ controller } {
+AdminMenu::AdminMenu(Controller& controller, AdoptionList* adopt) : controller{ controller }, adopt(adopt) {
 	this->buildAdminMenu();
 	this->populateList();
 
 	setWindowTitle("Admin Menu");
 	setWindowIcon(QIcon("icon.png"));
+
+	setMinimumSize(800, 400);
 
 	QObject::connect(this->addButton, &QPushButton::clicked, this, &AdminMenu::addButtonHandler);
 	QObject::connect(this->deleteButton, &QPushButton::clicked, this, &AdminMenu::deleteButtonHandler);
@@ -80,6 +82,9 @@ void AdminMenu::addButtonHandler()
 	catch (const DogException& e) {
 		QMessageBox::critical(this, "Error:", QString::fromStdString(e.what()));
 	}
+	catch (const RepoException& e) {
+		QMessageBox::critical(this, "Error:", QString::fromStdString(e.what()));
+	}
 	this->populateList();
 }
 
@@ -90,7 +95,9 @@ void AdminMenu::deleteButtonHandler() {
 		try {
 			std::vector<Dog> dogList = this->controller.getList();
 			if (selectedIndex < static_cast<int>(dogList.size())) {
+				std::string photo = dogList[selectedIndex].getPhotograph();
 				this->controller.delDog(dogList[selectedIndex]);
+				adopt->delDog(photo);
 				this->populateList();
 			}
 			else {
@@ -98,6 +105,9 @@ void AdminMenu::deleteButtonHandler() {
 			}
 		}
 		catch (const DogException& e) {
+			QMessageBox::critical(this, "Error:", QString::fromStdString(e.what()));
+		}
+		catch (const RepoException& e) {
 			QMessageBox::critical(this, "Error:", QString::fromStdString(e.what()));
 		}
 	}
@@ -123,6 +133,9 @@ void AdminMenu::editButtonHandler() {
 			}
 		}
 		catch (const DogException& e) {
+			QMessageBox::critical(this, "Error:", QString::fromStdString(e.what()));
+		}
+		catch (const RepoException& e) {
 			QMessageBox::critical(this, "Error:", QString::fromStdString(e.what()));
 		}
 	}

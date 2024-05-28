@@ -1,8 +1,11 @@
 #pragma once
 #include <vector>
+#include <qobject>
 #include "Repository.h"
 
-class AdoptionList{
+class AdoptionList: public QObject{
+	Q_OBJECT
+
 private:
 	Repository& repo;
 	std::vector<Dog> adoptionList;
@@ -38,4 +41,8 @@ public:
 	/// <param name="dog_list">The dog list.</param>
 	std::vector<Dog> filterAge(std::vector<Dog>& dog_list, int age);
 	virtual void display() = 0;
+	void delDog(std::string photo);
+public slots:
+signals:
+	void adoptionListUpdated();
 };
