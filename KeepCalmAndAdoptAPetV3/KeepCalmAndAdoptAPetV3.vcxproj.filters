@@ -105,6 +105,12 @@
     <ClInclude Include="DogChart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CommandManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DogCommands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="adoptedDogs.html" />

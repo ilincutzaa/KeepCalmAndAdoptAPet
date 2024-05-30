@@ -19,7 +19,7 @@ public:
     }
 
     int columnCount(const QModelIndex& parent = QModelIndex()) const override {
-        return 4; // Name, Breed, Age, Photo
+        return 4;
     }
 
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override {

@@ -124,7 +124,9 @@
     <QtMoc Include="AdoptionListModel.h" />
     <QtMoc Include="AdoptionListView.h" />
     <QtMoc Include="Controller.h" />
+    <ClInclude Include="CommandManager.h" />
     <ClInclude Include="Dog.h" />
+    <ClInclude Include="DogCommands.h" />
     <ClInclude Include="DogException.h" />
     <ClInclude Include="DogChart.h" />
     <ClInclude Include="DogValidator.h" />

@@ -1,17 +1,21 @@
 #pragma once
 #include <qobject>
 #include "Repository.h"
+#include "CommandManager.h"
+#include "DogCommands.h"
 
 class Controller: QObject {
 	Q_OBJECT
 private:
 	Repository& repo;
+	CommandManager& manager;
+
 public:	
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Controller"/> class.
 	/// </summary>
 	/// <param name="repo">The repo.</param>
-	Controller(Repository& repo);	
+	Controller(Repository& repo, CommandManager& manager);
 	/// <summary>
 	/// Finalizes an instance of the <see cref="Controller"/> class.
 	/// </summary>

@@ -8,6 +8,4 @@ Breed: Boxer | Name: Duke | Age: 7 | Photograph: https://media-be.chewy.com/wp-c
 Breed: Dachshund | Name: Milo | Age: 4 | Photograph: https://www.thesprucepets.com/thmb/8UgAnzf_7o7i7qPPr528XtM0IW8=/2121x0/filters:no_upscale():strip_icc()/GettyImages-839279536-313d30c290584bc0a207bc6243263bd4.jpg
 Breed: Border Collie | Name: Bella | Age: 8 | Photograph: https://www.dogster.com/wp-content/uploads/2024/03/blue-merle-border-collie-dog-posing-in-an-urban-setting_Koen-Adriaenssen_Shutterstock.jpg
 Breed: Rottweiler | Name: Roxy | Age: 0 | Photograph: https://ntbrand-wp.s3.amazonaws.com/mystart/wp-content/uploads/2020/03/12150859/My_Rotweiller_00.jpeg
-Breed: Dachshund | Name: Mickey | Age: 2 | Photograph: https://www.akc.org/wp-content/uploads/2017/11/Longhaired-Dachshund-standing-outdoors.jpg
-Breed: Siberian Husky | Name: Rex | Age: 5 | Photograph: https://www.ellevetsciences.com/wp-content/uploads/2022/07/ev-blog-huskies-header.jpg
-Breed: Dachshund | Name: Ricky | Age: 1 | Photograph: https://thenoblepaw.com/wp-content/uploads/2022/03/Dachshund.jpg
+Breed: jill | Name: jill | Age: 3 | Photograph: jill

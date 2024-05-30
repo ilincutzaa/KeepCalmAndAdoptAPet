@@ -42,7 +42,6 @@ public:
 	std::vector<Dog> filterAge(std::vector<Dog>& dog_list, int age);
 	virtual void display() = 0;
 	void delDog(std::string photo);
-public slots:
 signals:
 	void adoptionListUpdated();
 };

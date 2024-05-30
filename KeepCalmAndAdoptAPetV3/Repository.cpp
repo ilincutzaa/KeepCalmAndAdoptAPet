@@ -9,7 +9,13 @@ Repository::~Repository() {
 void Repository::addRepo(Dog& d) {
 	if (isDogInList(d))
 		throw RepoException("Dog already in list!\n");
-	this->dogs.push_back(d);
+	dogs.push_back(d);
+}
+
+void Repository::addRepoNoUndo(Dog& d) {
+	if (isDogInList(d))
+		throw RepoException("Dog already in list!\n");
+	dogs.push_back(d);
 }
 
 std::vector<Dog> Repository::get_all() const {

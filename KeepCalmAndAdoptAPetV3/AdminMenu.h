@@ -8,6 +8,7 @@ class AdminMenu : public QWidget {
 private:
 	Controller& controller;
 	AdoptionList* adopt;
+	CommandManager& manager;
 
 	QListWidget* dogListWidget;
 	QLineEdit* breedEdit;
@@ -21,8 +22,14 @@ private:
 	QPushButton* editButton;
 	QPushButton* chartButton;
 
+	QPushButton* undoButton;
+	QPushButton* redoButton;
+
+	QShortcut* undoShortCut;
+	QShortcut* redoShortCut;
+
 public:
-    AdminMenu(Controller& controller, AdoptionList* adopt);
+    AdminMenu(Controller& controller, AdoptionList* adopt, CommandManager& manager);
 
 private:
 	void buildAdminMenu();
@@ -38,6 +45,8 @@ private slots:
 	void deleteButtonHandler();
 	void editButtonHandler();
 	void chartButtonHandler();
+	void undoButtonHandler();
+	void redoButtonHandler();
 
     void backToMainMenu() {
 		emit backToMain();

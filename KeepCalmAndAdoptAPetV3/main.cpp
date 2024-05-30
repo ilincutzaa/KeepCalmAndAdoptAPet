@@ -9,6 +9,7 @@
 #include "MainMenu.h"
 #include "FileAdoption.h"
 #include "UserMenu.h"
+#include "CommandManager.h"
 
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
@@ -16,8 +17,9 @@ int main(int argc, char* argv[]) {
     QIcon appIcon("icon.png");
 
     std::vector<Dog> v;
-    FileRepository repo{ v , "Dogs.txt" };
-    Controller control{ repo };
+    CommandManager manager;
+    FileRepository repo{ v , "Dogs.txt"};
+    Controller control{ repo, manager };
 
     AdoptionList* adoptionList = nullptr;
 
@@ -58,9 +60,9 @@ int main(int argc, char* argv[]) {
 
     AdminMenu* adminMenu = nullptr;
 
-    QObject::connect(&mainMenu, &MainMenu::adminMenuRequested, [&mainWindow, &control, &mainMenu, &adminMenu, &adoptionList]() {
+    QObject::connect(&mainMenu, &MainMenu::adminMenuRequested, [&mainWindow, &control, &mainMenu, &adminMenu, &adoptionList, &manager]() {
         if (adminMenu == nullptr) {
-            adminMenu = new AdminMenu(control, adoptionList);
+            adminMenu = new AdminMenu(control, adoptionList, manager);
             QObject::connect(adminMenu, &AdminMenu::backToMain, [&mainWindow, &mainMenu, &adminMenu]() {
                 adminMenu->hide();
                 delete adminMenu;

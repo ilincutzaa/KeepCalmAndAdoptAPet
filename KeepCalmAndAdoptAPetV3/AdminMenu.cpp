@@ -1,7 +1,7 @@
 #include "AdminMenu.h"
 
 
-AdminMenu::AdminMenu(Controller& controller, AdoptionList* adopt) : controller{ controller }, adopt(adopt) {
+AdminMenu::AdminMenu(Controller& controller, AdoptionList* adopt, CommandManager& manager) : controller( controller ), adopt(adopt), manager(manager) {
 	this->buildAdminMenu();
 	this->populateList();
 
@@ -15,6 +15,12 @@ AdminMenu::AdminMenu(Controller& controller, AdoptionList* adopt) : controller{ 
 	QObject::connect(this->backButton, &QPushButton::clicked, this, &AdminMenu::backToMainMenu);
 	QObject::connect(this->editButton, &QPushButton::clicked, this, &AdminMenu::editButtonHandler);
 	QObject::connect(this->chartButton, &QPushButton::clicked, this, &AdminMenu::chartButtonHandler);
+	QObject::connect(this->undoButton, &QPushButton::clicked, this, &AdminMenu::undoButtonHandler);
+	QObject::connect(this->redoButton, &QPushButton::clicked, this, &AdminMenu::redoButtonHandler);
+
+	QObject::connect(this->undoShortCut, &QShortcut::activated, this, &AdminMenu::undoButtonHandler);
+	QObject::connect(this->redoShortCut, &QShortcut::activated, this, &AdminMenu::redoButtonHandler);
+
 }
 
 void AdminMenu::buildAdminMenu() {
@@ -48,14 +54,23 @@ void AdminMenu::buildAdminMenu() {
 	this->deleteButton = new QPushButton{ "Delete" };
 	this->editButton = new QPushButton{ "Edit Menu" };
 	this->chartButton = new QPushButton{ "View Chart" };
+	this->undoButton = new QPushButton{ "Undo" };
+	this->redoButton = new QPushButton{ "Redo" };
+
 
 	rightLayout->addWidget(this->addButton, 4, 1);
 	rightLayout->addWidget(this->deleteButton, 5, 1);
-	rightLayout->addWidget(this->backButton, 5, 3);
-	rightLayout->addWidget(this->editButton, 4, 3);
-	rightLayout->addWidget(this->chartButton, 4, 2);
+	rightLayout->addWidget(this->backButton, 5, 4);
+	rightLayout->addWidget(this->editButton, 4, 4);
+	rightLayout->addWidget(this->chartButton, 3, 3);
+	rightLayout->addWidget(this->undoButton, 5, 3);
+	rightLayout->addWidget(this->redoButton, 4, 3);
+
 
 	mainLayout->addLayout(rightLayout);
+
+	undoShortCut = new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Z), this);
+	redoShortCut = new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Y), this);
 
 }
 
@@ -147,4 +162,14 @@ void AdminMenu::editButtonHandler() {
 void AdminMenu::chartButtonHandler() {
 	DogChart* chart = new DogChart{ this->controller.getList() };
 	chart->show();
+}
+
+void AdminMenu::undoButtonHandler() {
+	manager.undo();
+	this->populateList();
+}
+
+void AdminMenu::redoButtonHandler() {
+	manager.redo();
+	this->populateList();
 }

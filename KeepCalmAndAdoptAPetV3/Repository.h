@@ -2,6 +2,7 @@
 #include "Dog.h"
 #include "RepoException.h"
 
+
 class Repository {
 private:
 	std::vector<Dog> dogs;
@@ -26,6 +27,7 @@ public:
 	/// <param name="repo">The repo.</param>
 	/// <param name="d">The dog.</param>
 	virtual void addRepo(Dog& d);
+	virtual void addRepoNoUndo(Dog& d);
 	/// <summary>
 	/// Return a copy of the current repo.
 	/// </summary>

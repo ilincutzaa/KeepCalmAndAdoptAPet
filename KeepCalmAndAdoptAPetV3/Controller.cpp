@@ -1,6 +1,6 @@
 #include "Controller.h"
 
-Controller::Controller(Repository& repo) : repo(repo) {
+Controller::Controller(Repository& repo, CommandManager& manager) : repo(repo), manager(manager) {
 }
 
 Controller::~Controller() {
@@ -11,29 +11,35 @@ std::vector<Dog> Controller::getList() {
 }
 
 void Controller::addDog(Dog& d) {
-	this->repo.addRepo(d);
+	auto addDogCmd = std::make_unique<AddDogCommand>(&repo, d);
+	manager.executeCommand(std::move(addDogCmd));
 }
 
 void Controller::delDog(Dog& d) {
 	std::string photo = d.getPhotograph();
-	this->repo.delRepo(d);
+	auto delDogCmd = std::make_unique<DeleteDogCommand>(&repo, d);
+	manager.executeCommand(std::move(delDogCmd));
 	emit dogDeleted(photo);
 }
 
 void Controller::updateDogName(Dog& d, std::string new_name) {
-	this->repo.updateName(d, new_name);
+	auto updateNameCmd = std::make_unique<UpdateNameCommand>(&repo, d, new_name);
+	manager.executeCommand(std::move(updateNameCmd));
 }
 
 void Controller::updateDogBreed(Dog& d, std::string new_breed) {
-	this->repo.updateBreed(d, new_breed);
+	auto updateBreedCmd = std::make_unique<UpdateBreedCommand>(&repo, d, new_breed);
+	manager.executeCommand(std::move(updateBreedCmd));
 }
 
 void Controller::updateDogAge(Dog& d, int new_age) {
-	this->repo.updateAge(d, new_age);
+	auto updateAgeCmd = std::make_unique<UpdateAgeCommand>(&repo, d, new_age);
+	manager.executeCommand(std::move(updateAgeCmd));
 }
 
 void Controller::updateDogPhotograph(Dog& d, std::string new_photograph) {
-	this->repo.updatePhoto(d, new_photograph);
+	auto updatePhotoCmd = std::make_unique<UpdatePhotoCommand>(&repo, d, new_photograph);
+	manager.executeCommand(std::move(updatePhotoCmd));
 }
 
 Dog Controller::getDogByID(int id) {

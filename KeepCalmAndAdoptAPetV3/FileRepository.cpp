@@ -21,7 +21,7 @@ void FileRepository::loadFromFile() {
 	}
 	Dog d{ "Breed", "Name", 0, "https://keepcalmandadoptapet.com/photo.jpg" };
 	while (infile >> d)
-		this->addRepo(d);
+		this->addRepoNoUndo(d);
 	infile.close();
 }
 
