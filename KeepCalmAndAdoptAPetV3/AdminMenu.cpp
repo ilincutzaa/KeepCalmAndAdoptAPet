@@ -14,7 +14,6 @@ AdminMenu::AdminMenu(Controller& controller, AdoptionList* adopt, CommandManager
 	QObject::connect(this->deleteButton, &QPushButton::clicked, this, &AdminMenu::deleteButtonHandler);
 	QObject::connect(this->backButton, &QPushButton::clicked, this, &AdminMenu::backToMainMenu);
 	QObject::connect(this->editButton, &QPushButton::clicked, this, &AdminMenu::editButtonHandler);
-	QObject::connect(this->chartButton, &QPushButton::clicked, this, &AdminMenu::chartButtonHandler);
 	QObject::connect(this->undoButton, &QPushButton::clicked, this, &AdminMenu::undoButtonHandler);
 	QObject::connect(this->redoButton, &QPushButton::clicked, this, &AdminMenu::redoButtonHandler);
 
@@ -53,7 +52,6 @@ void AdminMenu::buildAdminMenu() {
 	this->backButton = new QPushButton{ "Back to Main Menu" };
 	this->deleteButton = new QPushButton{ "Delete" };
 	this->editButton = new QPushButton{ "Edit Menu" };
-	this->chartButton = new QPushButton{ "View Chart" };
 	this->undoButton = new QPushButton{ "Undo" };
 	this->redoButton = new QPushButton{ "Redo" };
 
@@ -62,7 +60,6 @@ void AdminMenu::buildAdminMenu() {
 	rightLayout->addWidget(this->deleteButton, 5, 1);
 	rightLayout->addWidget(this->backButton, 5, 4);
 	rightLayout->addWidget(this->editButton, 4, 4);
-	rightLayout->addWidget(this->chartButton, 3, 3);
 	rightLayout->addWidget(this->undoButton, 5, 3);
 	rightLayout->addWidget(this->redoButton, 4, 3);
 
@@ -157,11 +154,6 @@ void AdminMenu::editButtonHandler() {
 	else {
 		QMessageBox::critical(this, "Error:", "No item selected.");
 	}
-}
-
-void AdminMenu::chartButtonHandler() {
-	DogChart* chart = new DogChart{ this->controller.getList() };
-	chart->show();
 }
 
 void AdminMenu::undoButtonHandler() {

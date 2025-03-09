@@ -1,6 +1,6 @@
 #pragma once
 #include "EditDogDialog.h"
-#include "DogChart.h"
+#include "qshortcut.h"
 #include "AdoptionList.h"
 
 class AdminMenu : public QWidget {
@@ -20,7 +20,6 @@ private:
 	QPushButton* deleteButton;
 	QPushButton* backButton;
 	QPushButton* editButton;
-	QPushButton* chartButton;
 
 	QPushButton* undoButton;
 	QPushButton* redoButton;
@@ -44,7 +43,6 @@ private slots:
 	void addButtonHandler();
 	void deleteButtonHandler();
 	void editButtonHandler();
-	void chartButtonHandler();
 	void undoButtonHandler();
 	void redoButtonHandler();
 
